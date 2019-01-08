@@ -160,7 +160,7 @@ class ControllerExtensionPaymentIfthenpayMbway extends Controller {
 			}
 		}
 		
-		$data['payment_ifthenpaymbway_url'] = ($this->config->get('config_secure') ? HTTP_CATALOG : HTTPS_CATALOG) . "index.php?route=extension/payment/ifthenpaymbway/callback&chave=[CHAVE_ANTI_PHISHING]&referencia=[REFERENCIA]&idpedido=[ID_TRANSACAO]&valor=[VALOR]&estado=[ESTADO]";
+		$data['payment_ifthenpaymbway_url'] = ($this->config->get('config_secure') ? rtrim(HTTP_CATALOG, '/') : rtrim(HTTPS_CATALOG, '/')) . "/index.php?route=extension/payment/ifthenpaymbway/callback&chave=[CHAVE_ANTI_PHISHING]&referencia=[REFERENCIA]&idpedido=[ID_TRANSACAO]&valor=[VALOR]&estado=[ESTADO]";
         
         $data['header'] = $this->load->controller('common/header');
         $data['column_left'] = $this->load->controller('common/column_left');
@@ -180,7 +180,7 @@ class ControllerExtensionPaymentIfthenpayMbway extends Controller {
 	private function sendCallbackEmail(){
 
 		$mbway_key = $this->request->post['payment_ifthenpaymbway_mbwkey'];
-		$url_cb = ($this->config->get('config_secure') ? HTTP_CATALOG : HTTPS_CATALOG) . "index.php?route=extension/payment/ifthenpaymbway/callback&chave=[CHAVE_ANTI_PHISHING]&referencia=[REFERENCIA]&idpedido=[ID_TRANSACAO]&valor=[VALOR]&estado=[ESTADO]";
+		$url_cb = ($this->config->get('config_secure') ? rtrim(HTTP_CATALOG, '/') : rtrim(HTTPS_CATALOG, '/')) . "/index.php?route=extension/payment/ifthenpaymbway/callback&chave=[CHAVE_ANTI_PHISHING]&referencia=[REFERENCIA]&idpedido=[ID_TRANSACAO]&valor=[VALOR]&estado=[ESTADO]";
 
 		$ap_key_cb = $this->request->post['payment_ifthenpaymbway_ap'];
 
@@ -227,7 +227,7 @@ class ControllerExtensionPaymentIfthenpayMbway extends Controller {
 
 		$settings = $this->model_setting_setting->getSetting('payment_ifthenpaymbway'); 
 		$mbway_key = $settings['payment_ifthenpaymbway_mbwkey'];
-		$url_cb = ($this->config->get('config_secure') ? HTTP_CATALOG : HTTPS_CATALOG) . "index.php?route=extension/payment/ifthenpaymbway/callback&chave=[CHAVE_ANTI_PHISHING]&referencia=[REFERENCIA]&idpedido=[ID_TRANSACAO]&valor=[VALOR]&estado=[ESTADO]";
+		$url_cb = ($this->config->get('config_secure') ? rtrim(HTTP_CATALOG, '/') : rtrim(HTTPS_CATALOG, '/')) . "/index.php?route=extension/payment/ifthenpaymbway/callback&chave=[CHAVE_ANTI_PHISHING]&referencia=[REFERENCIA]&idpedido=[ID_TRANSACAO]&valor=[VALOR]&estado=[ESTADO]";
 		$ap_key_cb = $settings['payment_ifthenpaymbway_ap'];
 
 		if(!empty($mbway_key) && !empty($url_cb) && !empty($ap_key_cb)){
