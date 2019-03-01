@@ -15,7 +15,7 @@ class ControllerPaymentIfthenpayMbway extends Controller {
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/payment/ifthenpaymbway.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/payment/ifthenpaymbway.tpl', $data);
 		} else {
-			return $this->load->view('default/template/payment/ifthenpaymbway.tpl', $data);
+			return $this->load->view('/payment/ifthenpaymbway.tpl', $data);
 		}
     }
 
@@ -41,8 +41,7 @@ class ControllerPaymentIfthenpayMbway extends Controller {
     
             if ($result->Estado == '000') {
                 $comment = '<div><table style="width: auto;min-width: 280px;max-width: 320px;padding: 5px;font-size: 11px;color: #374953;border: 1px solid #dddddd; margin-top: 10px;"><tbody><tr><td style="padding: 5px;" colspan="2"><div align="left"><img src="https://ifthenpay.com/img/mbway.png" alt="mbway"></div></td></tr><tr><td align="left" style="padding:10px; font-weight:bold; text-align:left">Telem&oacute;vel:</td><td align="left" style=" padding:10px; text-align:left">' . $telemovel . '</td></tr><tr><td align="left" style=" padding:10px; padding-top:10px; font-weight:bold; text-align:left">Encomenda:</td><td align="left" style=" padding:10px; padding-top:10px; text-align:left">#' . $this->session->data['order_id'] . '</td></tr><tr><td align="left" style="padding:10px; padding-bottom:15px; padding-top:10px; font-weight:bold; text-align:left">Valor:</td><td style="padding:10px; padding-bottom:15px; padding-top:10px; text-align:left">' . number_format($result->Valor, 2) . ' EUR</td></tr><tr><td style="font-size: x-small; padding:0; border: 0px; text-align:center;" colspan="2">Por favor verifique na App MBWAY e proceda ao pagamento da sua encomenda. <br>Processado por <a href="https://www.ifthenpay.com" target="_blanck">Ifthenpay</a></td></tr></tbody></table></div>';
-            } else {
-                $comment = 'Ocorreu um erro: ' . $result->MsgDescricao . '. <br/>Não foi possível concluir o pagamento.';
+            } else {                $comment = 'Ocorreu um erro: ' . $result->MsgDescricao . '. <br/>Não foi possível concluir o pagamento.';
             }
     
             $this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $this->config->get('ifthenpaymbway_order_status_id'), $comment, true);
