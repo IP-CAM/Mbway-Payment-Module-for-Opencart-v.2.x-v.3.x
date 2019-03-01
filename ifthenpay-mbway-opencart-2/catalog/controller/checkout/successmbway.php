@@ -75,7 +75,7 @@ class ControllerCheckoutSuccessMbWay extends Controller {
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/payment/successmbway.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/payment/successmbway.tpl', $data));
 		} else {
-			$this->response->setOutput($this->load->view('default/template/payment/successmbway.tpl', $data));
+			$this->response->setOutput($this->load->view('/payment/successmbway.tpl', $data));
 		}
 	}
 }
