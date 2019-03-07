@@ -18,7 +18,6 @@ class ModelExtensionPaymentIfthenpayMbway extends Model
             $status = false;
         }
 
-        $status = true;
         $method_data = array();
 
         if ($status) {
