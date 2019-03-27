@@ -7,7 +7,7 @@ $_['heading_title'] = 'Ifthenpay - MBWAY';
 $_['text_extension'] = 'Extensions';
 $_['text_payment'] = 'Payment';
 $_['text_success'] = 'Success: You have modified Ifthenpay - MBWAY payment module!';
-$_['text_ifthenpaymbway'] = '<a onclick="window.open(\'https:www.ifthenpay.com\');"><img src="view/image/payment/mbway.png" alt="ifthenpay.com" title="ifthenpay.com" style="border: 1px solid #EEEEEE;" /><br /></a>';
+$_['text_ifthenpaymbway'] = '<a onclick="window.open(\'https:www.ifthenpay.com\');"><img src="view/image/payment/ifthenpaymbway.png" alt="ifthenpay.com" title="ifthenpay.com" style="border: 1px solid #EEEEEE;" /><br /></a>';
 
 // Entry
 $_['entry_mbwkey'] = 'MBWAY KEY:';

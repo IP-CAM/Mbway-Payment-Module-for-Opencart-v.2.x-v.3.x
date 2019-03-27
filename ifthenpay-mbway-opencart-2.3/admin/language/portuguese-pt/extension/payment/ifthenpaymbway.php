@@ -7,7 +7,7 @@ $_['heading_title'] = 'Ifthenpay - MBWAY';
 $_['text_extension'] = 'Extensões';
 $_['text_payment'] = 'Pagamento';
 $_['text_success'] = 'Successo: O m&oacute;dulo Ifthenpay - MBWAY foi alterado com sucesso!';
-$_['text_ifthenpaymbway'] = '<a onclick="window.open(\'https:www.ifthenpay.com\');"><img src="view/image/payment/mbway.png" alt="Ifthenpay" title="ifthenpay" style="border: 1px solid #EEEEEE;" /><br /></a>';
+$_['text_ifthenpaymbway'] = '<a onclick="window.open(\'https:www.ifthenpay.com\');"><img src="view/image/payment/ifthenpaymbway.png" alt="Ifthenpay" title="ifthenpay" style="border: 1px solid #EEEEEE;" /><br /></a>';
 
 // Entry
 $_['entry_mbwkey'] = 'MBWAY KEY:';
