@@ -78,7 +78,7 @@ class ControllerExtensionPaymentIfthenpayMbway extends Controller
 
 		if($chave_ap_int==$chave_ap_ext && $order_info['payment_code'] == 'ifthenpaymbway')
 		{
-			if ($valor == $order_info['total'])
+			if ($valor == round($order_info['total'], 2))
 			{
 				$this->model_checkout_order->addOrderHistory($order_info["order_id"], $this->config->get('payment_ifthenpaymbway_order_status_complete_id'), date("d-m-Y H:m:s"), true);
 				echo "Encomenda PAGA";
